@@ -1,0 +1,31 @@
+<header>
+    <h1>gallery</h1>
+</header>
+<div class="container">
+    <div class="gallery">
+        <span *ngFor="let data of pictureData; let i=index" class="image">
+            <img (click)="onPreviewPicture(i)" [src]="data.src" [alt]="data.idx">
+        </span>
+    </div>
+    <div *ngIf="showMask" class="preview">
+        <div *ngIf="showCount" class="count">
+            {{currentIndex + 1}} / {{totalPictureCount}}
+        </div>
+        <button *ngIf="previewPicture" (click)="closePreviewPicture()" class="close-btn">
+            <i>X</i>
+        </button>
+        <button *ngIf="controls" (click)="clickPrevButton()" class="prev-btn btn">
+            <p> ◀ </p>
+        </button>
+        <button *ngIf="controls" (click)="clickNextButton()" class="next-btn btn">
+            <p> ▶ </p>
+        </button>
+        <div *ngIf="previewPicture" class="preview-img">
+            <img [src]="this.currentPreviewPicture.src" [alt]="this.currentPreviewPicture.idx">
+        </div>
+    </div>
+</div>
+<footer>
+    <img src="../../assets/symbol_color.jpg" alt="kookmin univ" style="width: 5%; margin-right: 5px;">
+    <p><b>최지원</b> qwerty_02@kookmin.ac.kr</p>
+</footer>

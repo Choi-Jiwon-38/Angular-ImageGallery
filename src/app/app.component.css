@@ -1,0 +1,9 @@
+:host {
+    width: 100vw;
+    height: 100vh;
+}
+/*
+    vh = viewport height
+    vw = viewport width
+    현재 실행 중인 스크린 크기에 맞춰 상대적인 크기를 반환해준다!
+*/
